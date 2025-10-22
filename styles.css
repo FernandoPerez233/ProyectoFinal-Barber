@@ -24,9 +24,6 @@ nav{
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
-a{
-    text-decoration: none;
-}
 nav .logo{
     font-size: 1.8rem;
     font-weight: 700;
@@ -67,7 +64,7 @@ nav .logo{
    text-align: center;
    color: white;
    position: relative;
-   overflow: hidden
+   overflow: hidden;
 }
 
 .eslogan::before{
@@ -82,11 +79,14 @@ nav .logo{
     animation: pulse 6s infinite;
 }
 
-.eslogan-cont{
-    z-index: 1;
-    max-width: 800px;
-    padding: 2rem
+.img-cont{
+
+     display: flex;
+    justify-content: space-between; 
+    align-items: center;             
+    padding: 40px;
 }
+
 
 .eslogan h1{
     font-size: 5rem;
