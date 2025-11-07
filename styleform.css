@@ -1,0 +1,61 @@
+
+.modal {
+    display: none;
+    position: fixed; /* Posición fija para cubrir toda la pantalla */
+    z-index: 1; /* Se superpone a otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro con opacidad */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* El contenido (caja blanca) del modal */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho responsivo, se puede ajustar */
+    max-width: 400px; /* Tamaño máximo para que sea "pequeña" */
+    border-radius: 10px;
+    position: relative;
+}
+
+/* El botón de cerrar (x) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para el formulario dentro del modal */
+form label {
+    display: block;
+     margin-top: 10px;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
