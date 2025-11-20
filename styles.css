@@ -122,7 +122,6 @@ nav .logo{
     transform: translateY(-3px);
 }
 
-/* seccion de servicios (hacerla) */
 
 .servicios{
     padding: 4rem 5%;
@@ -130,6 +129,44 @@ nav .logo{
     text-align: center;
 }
 
+.carousel{
+    width: 400px;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.carousel ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.carousel li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.carousel img{
+    width: 100%;
+}
+
+@keyframes slide {
+    0% {margin-left: 0;}
+    20% {margin-left: 0;}
+
+    25% {margin-left: -100;}
+    45% {margin-left: -100;}
+
+    50% {margin-left: -200;}
+    70% {margin-left: -200;}
+
+    75% {margin-left: -300;}
+    100% {margin-left: -300;}
+
+}
 .acerca{
     padding: 8rem 5%;
     background: #f9f9f9;
