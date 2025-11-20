@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styleform.css">
+</head>
+<body>
+    
+    <a href="index.html" id="openModalBtn">Ir al formulario!</a>
+    <div id="myModal" class="myModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Formulario de contacto</h3>
+            <form action="#get"method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Correo electronico:</label>
+                <input type="email" name="email" id="email" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
