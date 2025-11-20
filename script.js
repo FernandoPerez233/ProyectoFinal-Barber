@@ -1,3 +1,5 @@
+
+//Script investigado para abrir ventana popup centrada//
 (function(){
     function openPopup(url, name, w, h){
         var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
