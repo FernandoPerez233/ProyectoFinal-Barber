@@ -167,13 +167,13 @@ nav .logo{
 }
 
 .acerca-img::after{
-     content: '✂';
-            position: absolute;
-            font-size: 10rem;
-            color: rgba(255, 255, 255, 0.1);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+    content: '✂';
+    position: absolute;
+    font-size: 10rem;
+    color: rgba(255, 255, 255, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .galeria{
@@ -213,6 +213,11 @@ nav .logo{
             background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
             color: white;
             font-weight: 600;
+}
+
+img .img-galeria{
+    width: 5px;
+    height: 5px;
 }
 
 .contacto{
