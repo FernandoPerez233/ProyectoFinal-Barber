@@ -1,25 +1,22 @@
-// Obtener el modal
-var modal = document.getElementById("myModal");
-
-// Obtener el botón que abre el modal
-var btn = document.getElementById("openModalBtn");
-
-// Obtener el elemento <span> que cierra el modal (la X)
-var span = document.getElementsByClassName("close")[0];
-
-// Cuando el usuario hace clic en el botón, abrir el modal
-btn.onclick = function() {
-    modal.style.display = "flex"; // Usar flex para centrar
-}
-
-// Cuando el usuario hace clic en <span> (x), cerrar el modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// Cuando el usuario hace clic fuera del contenido del modal, cerrarlo
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+(function(){
+    function openPopup(url, name, w, h){
+        var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+        var dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
+        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+        var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+        var top = ((height / 2) - (h / 2)) + dualScreenTop;
+        var features = 'scrollbars=yes,resizable=yes,width=' + w + ',height=' + h + ',top=' + top + ',left=' + left;
+        var newWindow = window.open(url, name, features);
+        if (newWindow && newWindow.focus) newWindow.focus();
+        return newWindow;
     }
-}
+
+    var btn = document.getElementById('openContactBtn');
+    if (!btn) return;
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
+        // open a small popup: 480x650
+        openPopup('formulario.html', 'contactForm', 480, 650);
+    });
+})();

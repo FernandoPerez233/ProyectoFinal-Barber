@@ -8,21 +8,77 @@
 </head>
 <body>
     
-    <a href="index.html" id="openModalBtn">Ir al formulario!</a>
-    <div id="myModal" class="myModal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Formulario de contacto</h3>
-            <form action="#get"method="post">
-                <label for="name">Nombre:</label>
+    <div class="form-wrapper" role="form" aria-labelledby="contactTitle">
+        <h2 id="contactTitle">Contáctanos</h2>
+        <p>Rellena el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+        <form id="contactForm">
+            <div class="form-row">
+                <label for="name">Nombre completo</label>
                 <input type="text" id="name" name="name" required>
-                <label for="email">Correo electronico:</label>
-                <input type="email" name="email" id="email" required>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
+            </div>
+            <div class="form-row">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+                <label for="phone">Teléfono (opcional)</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-row">
+                <label for="service">Servicio de interés</label>
+                <select id="service" name="service">
+                    <option value="Corte">Corte</option>
+                    <option value="Afeitado">Afeitado</option>
+                    <option value="Perfilado">Perfilado</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Cuéntanos qué necesitas..." required></textarea>
+            </div>
+            <div class="error" id="formError" style="display:none;"></div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+            </div>
+            <div id="success" class="success" style="display:none;">Gracias — recibimos tu solicitud.</div>
+        </form>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        (function(){
+            var form = document.getElementById('contactForm');
+            var successEl = document.getElementById('success');
+            var errorEl = document.getElementById('formError');
+            var cancelBtn = document.getElementById('cancelBtn');
+
+            cancelBtn.addEventListener('click', function(){
+                try { window.close(); } catch(e) { window.location.href = 'index.html'; }
+            });
+
+            form.addEventListener('submit', function(e){
+                e.preventDefault();
+                errorEl.style.display = 'none';
+                var name = document.getElementById('name').value.trim();
+                var email = document.getElementById('email').value.trim();
+                var message = document.getElementById('message').value.trim();
+                if (!name || !email || !message){
+                    errorEl.textContent = 'Por favor completa los campos obligatorios.';
+                    errorEl.style.display = 'block';
+                    return;
+                }
+
+                // Aquí podrías enviar los datos a un endpoint (fetch), usar Formspree, o abrir mailto.
+                // Como ejemplo, mostramos feedback y cerramos la ventana popup automáticamente.
+                successEl.style.display = 'block';
+                setTimeout(function(){
+                    try { window.close(); } catch(e) { window.location.href = 'index.html'; }
+                }, 1600);
+            });
+        })();
+    </script>
+
+    <link rel="stylesheet" href="styleform.css">
 </body>
 </html>
