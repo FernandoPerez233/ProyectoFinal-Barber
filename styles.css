@@ -136,50 +136,52 @@ nav .logo{
     text-align: center;
 }
 
+.servicios-grid{
+    
+    background: rgb(245, 245, 245);
+    border-radius: 14px;
+    
+}
+
+
 .carousel{
-    width: 490px;
+    width: 100%;
+    max-width: 490px;
     height: auto;
     margin: 50px auto 0;
     overflow: hidden;
+    position: relative;
 }
 
 .carousel ul{
     display: flex;
     padding: 0;
-    width: 400%;
-    animation: slide 20s infinite alternate ease-in-out;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
 }
 
 .carousel li{
-    width: 100%;
+    min-width: 100%;
     list-style: none;
     position: relative;
+    box-sizing: border-box;
 }
 
 .carousel img{
     width: 100%;
 }
 
-@keyframes slide {
-    0% {margin-left: 0;}
-    20% {margin-left: 0;}
 
-    25% {margin-left: -100%;}
-    45% {margin-left: -100%;}
-
-    50% {margin-left: -200%;}
-    70% {margin-left: -200%;}
-
-    75% {margin-left: -300%;}
-    100% {margin-left: -300%;}
-
-}
 .acerca{
     padding: 8rem 5%;
-    background: #f9f9f9;
+    background: rgb(245, 245, 245);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5rem;
+
 }
 
 .acerca-cont{
@@ -197,7 +199,7 @@ nav .logo{
 .acerca-cont p{
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: #666;
+    color: #000;
     line-height: 1.8;
 }
 
@@ -211,7 +213,7 @@ nav .logo{
 }
 
 .acerca-img::after{
-    content: '✂';
+    content: '';
     position: absolute;
     font-size: 10rem;
     color: rgba(255, 255, 255, 0.1);
