@@ -145,25 +145,28 @@ nav .logo{
 
 
 .carousel{
-    width: 600px;
-    max-width: auto;
+    width: 100%;
+    max-width: 600px;
     height: auto;
     margin: 50px auto 0;
     overflow: hidden;
-    
+    border-radius: 8px;
+    padding: 0 1rem;
 }
 
 .carousel ul{
     display: flex;
     padding: 0;
     margin: 0;
-    width: auto;
+    width: 100%;
     list-style: none;
+    animation: slide-carousel 12s infinite;
     transition: transform 0.6s ease-in-out;
 }
 
 .carousel li{
     width: 100%;
+    flex-shrink: 0;
     list-style: none;
     position: relative;
     box-sizing: border-box;
@@ -171,7 +174,17 @@ nav .logo{
 
 .carousel img{
     width: 100%;
+    height: auto;
+    display: block;
 }
+
+@keyframes slide-carousel {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 100% { transform: translateX(-300%); }
+}
+
 
 
 .acerca{
@@ -314,6 +327,13 @@ footer{
 
 /* parte responsive */
 
+@media (max-width: 1024px){
+    .carousel{
+        max-width: 90%;
+        margin: 40px auto 0;
+    }
+}
+
 @media (max-width: 768px){
     .eslogan h1{
         font-size: 3rem;
@@ -333,5 +353,63 @@ footer{
     .contacto-info{
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .carousel{
+        max-width: 95%;
+        margin: 30px auto 0;
+        padding: 0 0.5rem;
+    }
+
+    .carousel ul{
+        animation: slide-carousel 10s infinite;
+    }
+
+    .servicios-grid{
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px){
+    .eslogan h1{
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .eslogan p{
+        font-size: 1rem;
+    }
+
+    .carousel{
+        max-width: 100%;
+        margin: 20px 0 0;
+        padding: 0;
+    }
+
+    .carousel ul{
+        animation: slide-carousel 8s infinite;
+    }
+
+    .seccion-titulo{
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .acerca-cont h2{
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .acerca-cont p{
+        font-size: 0.95rem;
+    }
+
+    .contacto-info{
+        gap: 1rem;
+    }
+
+    .btn-cto{
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
     }
 }
