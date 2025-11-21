@@ -18,7 +18,8 @@
     if (!btn) return;
     btn.addEventListener('click', function(e){
         e.preventDefault();
-        // open a small popup: 480x650
+       
+        //abre ventana popup pequeña: 480x650
         openPopup('formulario.html', 'contactForm', 480, 650);
     });
 })();
